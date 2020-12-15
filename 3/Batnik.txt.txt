@@ -1,0 +1,24 @@
+echo off
+
+echo 1) System information
+wmic OS get Name,Version /format:list
+
+echo 2) Information about the processor
+wmic CPU get Name,NumberOfCores,NumberOfLogicalProcessors,Maxclockspeed /format:list
+
+echo 3) Information about the parent company
+wmic baseboard get manufacturer, product /format:list
+
+echo 4) BIOS information
+wmic BIOS get manufacturer,name,SMBIOSBIOSVersion,version /format:list
+
+echo 5) Information about memory modules
+wmic memorychip get manufacturer,speed,Capacity,DeviceLocator,PartNumber /format:list
+
+echo 6) HDD information
+wmic diskdrive get model,size /format:list
+
+echo 7) Information about logical disks
+wmic logicaldisk get deviceid,size,freespace,volumename /format:list
+
+pause
